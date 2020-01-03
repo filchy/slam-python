@@ -1,5 +1,3 @@
-from extractor import Extractor
-
 import cv2
 import numpy as np
 
