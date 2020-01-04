@@ -1,12 +1,12 @@
 # SLAM
 
 ![](output/slam_frame.png)
-![](output/slam_plt.png)
 
 ## Libraries used
-* python-opencv
-* numpy
-* matlotlib
+* python-opencv (https://opencv.org/)
+* numpy (https://numpy.org/)
+* open3d (http://www.open3d.org/)
+* matlotlib (https://matplotlib.org/)
 
 ## TODO
 * make point cloud in real-time (no  frame by framy)
