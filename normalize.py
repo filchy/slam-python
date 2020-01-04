@@ -16,7 +16,7 @@ def scale_and_transform_points(points):
 	norm3d = np.array([
 		[scale, 0, -scale*center[0]],	#x
 		[0, scale, -scale*center[1]],	#y
-		[0, 0, 1]])						#z
+		[0, 0, 1]])			#z
 
 	return np.dot(norm3d, points), norm3d
 
