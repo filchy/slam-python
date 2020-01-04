@@ -7,9 +7,9 @@
 ![](output/slam_plt.png)
 
 ## Libraries used
-* [python-opencv](https://opencv.org/)
-* [numpy](https://numpy.org/)
-* [open3d](http://www.open3d.org/)
+* [OpenCV](https://opencv.org/)
+* [NumPy](https://numpy.org/)
+* [Open3D](http://www.open3d.org/)
 * [matlotlib](https://matplotlib.org/)
 
 ## TODO
