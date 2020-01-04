@@ -1,6 +1,10 @@
 # SLAM
 
 ![](output/slam_frame.png)
+### point cloud using open3d
+![](output/slam_open3d.png)
+### point cloud using matplotlib
+![](output/slam_plt.png)
 
 ## Libraries used
 * python-opencv (https://opencv.org/)
