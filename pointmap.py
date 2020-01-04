@@ -25,3 +25,4 @@ class PointMap(object):
             array_to_project = array_to_project[1:, :]
 
             return array_to_project
+          
