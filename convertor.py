@@ -10,3 +10,4 @@ def cart2hom(array):
 	else:
 		array_3dim = np.asarray(np.vstack([array, np.ones(array.shape[1])]))
 		return array_3dim
+	
