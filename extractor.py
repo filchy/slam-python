@@ -16,7 +16,7 @@ class Extractor(object):
 
 		else:
 			pts = cv2.goodFeaturesToTrack(image=np.array(img).astype(np.uint8), maxCorners=4500,
-				qualityLevel=0.01, minDistance=3)
+				qualityLevel=0.02, minDistance=3)
 		# extraction
 		kpts = [cv2.KeyPoint(p[0][0],p[0][1], _size=30) for p in pts]
 
@@ -50,5 +50,4 @@ class Extractor(object):
 		else:
 			self.last = {"kpts":kpts, "des":des}
 			return np.array([0]),np.array([0]), 0, 0
-
-		#return kpts, des, ret
+		
