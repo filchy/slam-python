@@ -3,8 +3,10 @@ from extractor import Extractor
 from convertor import cart2hom
 from normalize import compute_essential_normalized, compute_P_from_essential, reconstruct_one_point, triangulation
 
+
 import cv2
 import numpy as np
+import open3d as o3d
 
 
 display = Display()
@@ -13,8 +15,6 @@ extractor = Extractor()
 
 def process(img):
 	pts1, pts2, kpts, matches = extractor.extract_keypoints(img=img)
-	if kpts != 0 or matches !=0:
-		display.display_points2d(img, kpts, matches)
 
 	# converto to 3 dimensional
 	points1 = cart2hom(pts1)
@@ -25,7 +25,7 @@ def process(img):
 	intrinsic = np.array([[3000,0,img_w/2],
 						[0,3000,img_h/2],
 						[0,0,1]])
-
+	tripoints3d = []
 	if points1.ndim != 1 or points2.ndim != 1:
 		points1_norm = np.dot(np.linalg.inv(intrinsic), points1)
 		points2_norm = np.dot(np.linalg.inv(intrinsic), points2)
@@ -49,16 +49,8 @@ def process(img):
 		P2 = np.linalg.inv(np.vstack([P2s[ind], [0, 0, 0, 1]]))[:3, :4]
 		tripoints3d = triangulation(points1_norm, points2_norm, P1, P2)
 
-		display.display_points3d(tripoints3d)
-
 	else:
-		#raise TypeError("Wrong dimension of array")
 		print("Wrong dimension of array")
 		pass
 
-	return img
-
-
-def slam_run(frame):
-	frame = process(frame)
-	display.display_vid(frame)
+	return img, tripoints3d, kpts, matches
