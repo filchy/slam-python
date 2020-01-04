@@ -13,5 +13,5 @@
 * [matlotlib](https://matplotlib.org/)
 
 ## TODO
-* make point cloud in real-time (no  frame by framy)
+* make point cloud in real-time (no  frame by frame) -> pangolin (can not download)
 * better optimization
