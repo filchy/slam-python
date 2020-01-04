@@ -26,13 +26,18 @@ class Display:
 				(u1, v1) = np.int32(match[0].pt)
 				(u2, v2) = np.int32(match[1].pt)
 				cv2.line(img, (u1, v1), (u2, v2), color=(0,0,255), thickness=1)
-
 		return img
 
 
 	def display_points3d(self, tripoints3d):
+		# open3d
+		if tripoints3d is not None:
+			pcd = o3d.geometry.PointCloud()
+			pcd.points = o3d.utility.Vector3dVector(tripoints3d)
+			o3d.visualization.draw_geometries([pcd])
+
 		"""
-		# for matplotlib
+		# matplotlib
 		x_points = [pt for pt in tripoints3d[0]]
 		y_points = [-pt for pt in tripoints3d[1]]
 		z_points = [-pt for pt in tripoints3d[2]]
@@ -53,11 +58,9 @@ class Display:
 		self.last_z = z_points
 		self.counts += 1
 		"""
-		if tripoints3d is not None:
-			pcd = o3d.geometry.PointCloud()
-			pcd.points = o3d.utility.Vector3dVector(tripoints3d)
-			o3d.visualization.draw_geometries([pcd])
+		
 
 	def display_vid(self, img):
 
 		cv2.imshow("main", img)
+		
