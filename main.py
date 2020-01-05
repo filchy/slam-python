@@ -21,17 +21,15 @@ def main():
 				display.display_points2d(frame, kpts, matches)
 			else:
 				pass
-
+				
 			display.display_vid(frame)
 
 			if xyz is not None:
 				display.display_points3d(xyz)
 			else:
 				pass
-
 			if cv2.waitKey(1) == 27:
 				break
-
 		else:
 			break
 
