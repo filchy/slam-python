@@ -23,8 +23,8 @@ def process(img):
 	img_h, img_w, img_ch = img.shape
 
 	intrinsic = np.array([[3000,0,img_w/2],
-						[0,3000,img_h/2],
-						[0,0,1]])
+				[0,3000,img_h/2],
+				[0,0,1]])
 	tripoints3d = []
 	if points1.ndim != 1 or points2.ndim != 1:
 		points1_norm = np.dot(np.linalg.inv(intrinsic), points1)
