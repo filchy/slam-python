@@ -21,7 +21,7 @@ class Display:
 			for kpt in kpts:
 				cv2.circle(img, (int(kpt.pt[0]), int(kpt.pt[1])), radius=2, color=(0,255,0), thickness=-1)
 		
-		if matches !=0:
+		if matches != 0:
 			for match in matches:
 				(u1, v1) = np.int32(match[0].pt)
 				(u2, v2) = np.int32(match[1].pt)
