@@ -8,7 +8,7 @@ pmap = PointMap()
 display = Display()
 
 def main():
-	cap = cv2.VideoCapture("test_video3.mp4")
+	cap = cv2.VideoCapture("videos/test_video3.mp4")
 
 	while cap.isOpened():
 		ret, frame = cap.read()
@@ -33,7 +33,7 @@ def main():
 		else:
 			break
 
-	cv2.destrouyAllWindows()
+	cv2.destroyAllWindows()
 	cap.release()
 
 if __name__ == '__main__':
