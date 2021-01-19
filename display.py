@@ -4,7 +4,7 @@ import open3d as o3d
 import matplotlib.pyplot as plt
 from matplotlib.pylab import *
 from mpl_toolkits.mplot3d import Axes3D
-
+import time
 
 
 class Display:
@@ -34,7 +34,15 @@ class Display:
 		if tripoints3d is not None:
 			pcd = o3d.geometry.PointCloud()
 			pcd.points = o3d.utility.Vector3dVector(tripoints3d)
-			o3d.visualization.draw_geometries([pcd])
+			# o3d.visualization.draw_geometries([pcd])
+			# vis = o3d.visualization.Visualizer()
+			vis = o3d.visualization.Visualizer()
+			vis.create_window()
+			vis.add_geometry(pcd)
+			# vis.destroy_window()
+			vis.update_renderer()
+			vis.poll_events()
+			time.sleep(0.1)
 
 		"""
 		# matplotlib
