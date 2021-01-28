@@ -29,7 +29,7 @@ class Display:
 		return img
 
 
-	def display_points3d(self, tripoints3d):
+	def display_points3d(self, tripoints3d, pcd, visualizer):
 		# open3d
 		if tripoints3d is not None:
 			pcd.clear()
