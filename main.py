@@ -10,6 +10,10 @@ display = Display()
 def main():
 	cap = cv2.VideoCapture("videos/test_video3.mp4")
 
+	pcd = o3d.geometry.PointCloud()
+	visualizer = o3d.visualization.Visualizer()
+	visualizer.create_window(window_name="3D plot", width=960, height=540)
+
 	while cap.isOpened():
 		ret, frame = cap.read()
 		frame = cv2.resize(frame, (960, 540))
@@ -21,11 +25,11 @@ def main():
 				display.display_points2d(frame, kpts, matches)
 			else:
 				pass
-				
+
 			display.display_vid(frame)
 
 			if xyz is not None:
-				display.display_points3d(xyz)
+				display.display_points3d(xyz, pcd, visualizer)
 			else:
 				pass
 			if cv2.waitKey(1) == 27:
