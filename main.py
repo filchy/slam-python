@@ -3,6 +3,7 @@ from display import Display
 from pointmap import PointMap
 
 import cv2
+import open3d as o3d
 
 pmap = PointMap()
 display = Display()
