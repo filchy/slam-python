@@ -32,9 +32,13 @@ class Display:
 	def display_points3d(self, tripoints3d):
 		# open3d
 		if tripoints3d is not None:
-			pcd = o3d.geometry.PointCloud()
+			pcd.clear()
 			pcd.points = o3d.utility.Vector3dVector(tripoints3d)
-			o3d.visualization.draw_geometries([pcd])
+			visualizer.remove_geometry(pcd)
+			visualizer.add_geometry(pcd)
+			visualizer.poll_events()
+			visualizer.update_renderer()
+			time.sleep(.2)
 
 		"""
 		# matplotlib
