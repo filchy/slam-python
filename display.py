@@ -40,31 +40,5 @@ class Display:
 			visualizer.update_renderer()
 			time.sleep(.2)
 
-		"""
-		# matplotlib
-		x_points = [pt for pt in tripoints3d[0]]
-		y_points = [-pt for pt in tripoints3d[1]]
-		z_points = [-pt for pt in tripoints3d[2]]
-
-		if self.last_x != []:
-			fig = plt.figure(figsize=(9,9))
-			fig.suptitle('3D reconstructed', fontsize=16)
-			ax = fig.gca(projection='3d')
-			ax.plot(self.last_x, self.last_z, self.last_y, 'b.')
-			ax.set_xlabel('x axis')
-			ax.set_ylabel('z axis')
-			ax.set_zlabel('y axis')
-		
-			plt.show()
-
-		self.last_x = x_points
-		self.last_y = y_points
-		self.last_z = z_points
-		self.counts += 1
-		"""
-		
-
 	def display_vid(self, img):
-
 		cv2.imshow("main", img)
-		
