@@ -26,7 +26,6 @@ def main():
 				display.display_points2d(frame, kpts, matches)
 			else:
 				pass
-
 			display.display_vid(frame)
 
 			if xyz is not None:
